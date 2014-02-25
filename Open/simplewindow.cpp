@@ -55,51 +55,29 @@ int DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
 	glRotatef(-angle, -0.01, 0.1, 0.01);
 
 
-	glBegin(GL_QUADS);
+	glBegin(GL_TRIANGLES);
 	{
 		glColor3f(0.1, 0.2, 0.3);
 
-		glVertex3f(-5, 5, 5);
-		glVertex3f(5, 5, 5);
-		glVertex3f(5, -5, 5);
-		glVertex3f(-5, -5, 5);
-		
-		glColor3f(0.4f, 0.5f, 0.6f);
-
-		glVertex3f(-5, 5, -5);
-		glVertex3f(5, 5, -5);
-		glVertex3f(5, -5, -5);
-		glVertex3f(-5, -5, -5);
-
-		glColor3f(0.1f, 0.2f, 0.3f);
-
-		glVertex3f(-5, 5, 5);
-		glVertex3f(5, 5, 5);
-		glVertex3f(5, 5, -5);
-		glVertex3f(-5, 5, -5);
-
-		glColor3f(0.4, 0.5, 0.6);
-
-		glVertex3f(-5, -5, -5);
-		glVertex3f(5, -5, -5);
-		glVertex3f(5, -5, 5);
-		glVertex3f(-5, -5, 5);
-
+		glVertex3f(0, 0, 5);
+		glVertex3f(5, 0, -5);
+		glVertex3f(-5, 0, -5);
 		
 
-		glColor3f(0.1f, 0.2f, 0.3f);
+		glColor3f(0.33, 0.21, 0.11);
+		glVertex3f(0, 0, 5);
+		glVertex3f(0, 5,0);
+		glVertex3f(-5,0, -5);
+		
+		glColor3f(0.435, 0.76, 0.378);
+		glVertex3f(5, 0, -5);
+		glVertex3f(0, 5, 0);
+		glVertex3f(0, 0, 5);
 
-		glVertex3f(5, 5, 5);
-		glVertex3f(5, 5, -5);
-		glVertex3f(5, -5, -5);
-		glVertex3f(5, -5, 5);
-
-		glColor3f(0.4, 0.5, 0.6);
-
-		glVertex3f(-5, 5, 5);
-		glVertex3f(-5, 5, -5);
-		glVertex3f(-5, -5, -5);
-		glVertex3f(-5, -5, 5);
+		glColor3f(0.78, 0.865, 0.326);
+		glVertex3f(5, 0, -5);
+		glVertex3f(0, 5, 0);
+		glVertex3f(-5, 0, -5);
 	}
 	glEnd();
 
