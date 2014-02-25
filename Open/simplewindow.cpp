@@ -55,94 +55,57 @@ int DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
 	glRotatef(-angle, -0.01, 0.1, 0.01);
 
 
-	glBegin(GL_LINES); //the axis
-	{
-		glColor4f(1, 0, 0, 1);
-		glVertex3f(-20, 0, 0);
-		glVertex3f(20, 0, 0);
-
-
-		glColor4f(0, 1, 0, 1);
-		glVertex3f(0, 20, 0);
-		glVertex3f(0, -20, 0);
-
-
-		glColor4f(0, 0, 1, 1);
-		glVertex3f(0, 0, 20);
-		glVertex3f(0, 0, -20);
-	}
-
-	glEnd();
-
-	glBegin(GL_LINES);
-	{
-		glColor3f(1, 1, 1);
-
-		float blockSize=1, half = 5, limitFirstAxis = 10, limitSecondAxes = 10;
-
-		for (int i = 0; i < limitFirstAxis; i++)
-		{
-			for (int j = 0; j < limitSecondAxes; j++)
-			{
-				glVertex3f(i - half, j - half, 0);
-				glVertex3f(i - half + blockSize, j - half, 0);
-
-				glVertex3f(i - half, j - half, 0);
-				glVertex3f(i - half, j - half + blockSize, 0);
-
-				glVertex3f(i - half, 0, j - half);
-				glVertex3f(i - half + blockSize, 0, j - half);
-
-				glVertex3f(i - half, 0, j - half);
-				glVertex3f(i - half, 0, j - half + blockSize);
-				if (j == limitFirstAxis - 1)
-				{
-					glVertex3f(i - half, 0, j - half + blockSize);
-					glVertex3f(i - half + blockSize, 0, j - half + blockSize);
-
-					glVertex3f(i - half, j - half + blockSize, 0);
-					glVertex3f(i - half + blockSize, j - half + blockSize, 0);
-				}
-				if (i == limitSecondAxes - 1)
-				{
-					glVertex3f(i - half + blockSize, 0, j - half);
-					glVertex3f(i - half + blockSize, 0, j - half + blockSize);
-
-					glVertex3f(i - half + blockSize, j - half, 0);
-					glVertex3f(i - half + blockSize, j - half + blockSize, 0);
-				}
-			}
-		}
-
-	}
-	glEnd();
-
-
 	glBegin(GL_QUADS);
 	{
-		for (int i = 0; i < 10; i++)
-		{
-			for (int j = 0; j < 10; j++)
-			{
-				glColor3f(0.1*j, 0.2*j, 0.3*j);
-				glVertex3f(i - 5, j - 5, 0);
-				glVertex3f(i - 5 + 1, j - 5, 0);
+		glColor3f(0.1, 0.2, 0.3);
 
-				glColor3f(0.4*j, 0.5*j, 0.6*j);
-				glVertex3f(i - 5, j - 5, 0);
-				glVertex3f(i - 5, j - 5 + 1, 0);
+		glVertex3f(-5, 5, 5);
+		glVertex3f(5, 5, 5);
+		glVertex3f(5, -5, 5);
+		glVertex3f(-5, -5, 5);
+		
+		glColor3f(0.4f, 0.5f, 0.6f);
 
-				glColor3f(0.7*j, 0.8*j, 0.9*j);
-				glVertex3f(i - 5, 0, j - 5);
-				glVertex3f(i - 5 + 1, 0, j - 5);
+		glVertex3f(-5, 5, -5);
+		glVertex3f(5, 5, -5);
+		glVertex3f(5, -5, -5);
+		glVertex3f(-5, -5, -5);
 
-				glColor3f(0.1*j, 0.2*j, 0.3*j);
-				glVertex3f(i - 5, j - 5, 0);
-				glVertex3f(i - 5, 0, j - 5 + 1);
-			}
-		}
+		glColor3f(0.1f, 0.2f, 0.3f);
+
+		glVertex3f(-5, 5, 5);
+		glVertex3f(5, 5, 5);
+		glVertex3f(5, 5, -5);
+		glVertex3f(-5, 5, -5);
+
+		glColor3f(0.4, 0.5, 0.6);
+
+		glVertex3f(-5, -5, -5);
+		glVertex3f(5, -5, -5);
+		glVertex3f(5, -5, 5);
+		glVertex3f(-5, -5, 5);
+
+		
+
+		glColor3f(0.1f, 0.2f, 0.3f);
+
+		glVertex3f(5, 5, 5);
+		glVertex3f(5, 5, -5);
+		glVertex3f(5, -5, -5);
+		glVertex3f(5, -5, 5);
+
+		glColor3f(0.4, 0.5, 0.6);
+
+		glVertex3f(-5, 5, 5);
+		glVertex3f(-5, 5, -5);
+		glVertex3f(-5, -5, -5);
+		glVertex3f(-5, -5, 5);
 	}
 	glEnd();
+
+
+	
+	
 	angle += 0.05;
 	// Reset The Current Modelview Matrix
 	return TRUE;										// Everything Went OK
